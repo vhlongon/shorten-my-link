@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header';
+import LinkCreate from './components/link-create';
 
 class App extends React.Component {
 
@@ -10,7 +11,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <Header />
+      <div>
+        <Header />
+        <LinkCreate />
+      </div>
     );
   }
 }
