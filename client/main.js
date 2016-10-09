@@ -1,0 +1,22 @@
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <h1>Hello there!</h1>
+    );
+  }
+}
+
+Meteor.startup(() => {
+  ReactDOM.render(
+    <App />,
+    document.querySelector('#react-root')
+  );
+});
