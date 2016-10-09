@@ -17,7 +17,7 @@ Meteor.methods({
 
     //We're ready to save the token for your url here
     // create a random number, here we are saving to the mongo DB
-    const token = bMath.random(36).slice(-5);
+    const token = Math.random(36).toString(36).slice(-5);
     Links.insert({url, token, clicks: 0});
   }
 });
