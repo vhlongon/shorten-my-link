@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/header';
 
 class App extends React.Component {
 
@@ -9,7 +10,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Hello there!</h1>
+      <Header />
     );
   }
 }
@@ -17,6 +18,6 @@ class App extends React.Component {
 Meteor.startup(() => {
   ReactDOM.render(
     <App />,
-    document.querySelector('#react-root')
+    document.querySelector('.react-root')
   );
 });
