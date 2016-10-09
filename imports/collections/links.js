@@ -12,7 +12,13 @@ import {check, Match} from 'meteor/check';
 // we can access this anywhere on your app by aclling Meteor.call('links.insert');
 Meteor.methods({
   'links.insert': function(url) {
+    // check the url before saving it
     check(url, Match.Where(url => validUrl.isUri(url)));
+
+    //We're ready to save the token for your url here
+    // create a random number, here we are saving to the mongo DB
+    const token = bMath.random(36).slice(-5);
+    Links.insert({url, token, clicks: 0});
   }
 });
 
